@@ -9,8 +9,7 @@ PROGRESS_MODE ?= plain
 .PHONY: update-tags docker-build docker-push docker-test
 
 docker-build:
-	# https://github.com/docker/buildx#building
-	docker buildx build \
+	docker build \
 		--tag $(IMAGE_TAG) \
 		--progress $(PROGRESS_MODE) \
 		--platform $(PLATFORM) \

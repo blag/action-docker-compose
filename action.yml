@@ -1,9 +1,9 @@
-name: "action-docker-compose"
-author: williamdes
-description: "A GitHub action to run docker-compose"
+name: "Docker Compose Command"
+author: blag
+description: "Run docker-compose within GitHub Actions"
 inputs:
     cli-args:
-        description: "Command line arguments"
+        description: "Command line arguments for docker-compose"
         required: true
 
 branding:
@@ -11,6 +11,6 @@ branding:
     color: blue
 runs:
     using: "docker"
-    image: "docker://botsudo/action-docker-compose:latest"
+    image: "docker://blag/action-docker-compose:latest"
     args:
         - ${{ inputs.cli-args }}

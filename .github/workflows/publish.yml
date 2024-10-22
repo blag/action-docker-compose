@@ -32,14 +32,14 @@ jobs:
         - name: Build action image
           run: make docker-build
           env:
-            IMAGE_TAG: "docker.io/botsudo/action-docker-compose:latest"
+            IMAGE_TAG: "docker.io/blag/action-docker-compose:latest"
             PLATFORM: linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7
             ACTION: push
 
         - name: Sign and push docker image
-          uses: sudo-bot/action-docker-sign@latest
+          uses: sudo-bot/action-docker-sign@1aafb9aa5419f70088127e6dffec8f79241b443b
           with:
-            image-ref: "docker.io/botsudo/action-docker-compose:latest"
+            image-ref: "docker.io/blag/action-docker-compose:latest"
             # Sign the manifest
             sign-manifest: true
             # Required to sign the manifest
